@@ -1,0 +1,21 @@
+#Configure screens
+~/.config/autostart/screens
+
+
+# Run a Composite manager
+xcompmgr &
+
+# Terminate already running bar instances
+pkill -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -x polybar >/dev/null; do sleep 1; done
+
+# Launch
+~/.config/polybar/launch.sh --hack &
+
+# background
+feh --bg-scale ~/Pictures/wallpapers.png &
+
+#Screensaver
+xscreensaver -nosplash &
