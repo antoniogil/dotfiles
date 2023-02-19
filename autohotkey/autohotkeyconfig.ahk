@@ -255,6 +255,7 @@ CapsLock & n:: Send, ^{BS}                                           ;|
 LAlt & 2:: Send !{F2}                                                ;|
 LAlt & 4:: Send !{F4}                                                ;|
 CapsLock & ':: Send {F11}                                            ;|
+Ctrl & 4:: Send ^{F4}
 ;---------------------------------------------------------------------o
 
 RAlt & Esc:: Send {\}
