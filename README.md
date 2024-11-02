@@ -12,14 +12,13 @@ the default terminal program for hyprland. Obviously use dracula theme too
 ## mc
 use to manage files from terminal. Use dracula theme too
 
-## nvim
-
-
 ## rofi
+use for launch windows programs and powermenu
 
-
-## thefuck
+## nvim
+using the marvelous [lazynvim](https://lazyvim.org) with only one change. relativenumber = false
 
 ## waybar
+minimal configuration. CPU, Memory, WIFI, workspaces, volumen, time, powermenu. With draculatheme applied
 
 
