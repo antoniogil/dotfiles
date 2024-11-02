@@ -1,0 +1,98 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  // "height": 25, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 4, // Gaps between modules (4px)
+  "margin": "10 10 0 10", //"10 20 0 20",
+  // Choose the order of the modules
+  "modules-left": [
+    "custom/menu",
+    "custom/separator",
+    "cpu",
+    "memory",
+    "battery",
+    "custom/separator",
+    "network"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "custom/separator",
+    "clock",
+    "custom/separator",
+    "custom/powermenu"
+  ],
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "tray": {
+    "spacing": 15
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {}%",
+    "tooltip": false
+  },
+  "battery": {
+    "bat": "BAT0",
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "󰂃",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format-charging": "󰂄 {capacity}%",
+    "interval": 10
+  },
+  "network":{
+    "interface": "wlan0",
+    "format":"{ifname}",
+    "format-wifi":"{essid} ({signalStrength}%) ",
+    "format-disconnected": "󰖪"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰕾"
+    ],
+    "format-muted": "󰝟  {volume}%"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%d. %m. %Y}"
+  },
+  "custom/menu": {
+    "format": "󰣇",
+    "on-click": "eww open leftmenu",
+    "tooltip": false
+  },
+  "custom/powermenu": {
+    "format": "⏻",
+    "on-click": " eww open powermenu",
+    "tooltip": false
+  },
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  }
+}
