@@ -7,7 +7,6 @@
 }
 
 window#waybar {
-    /*background: rgba(0,0,0, 0.4);*/
     background: @background;
     color: @purple;
     border-radius: 3px;
@@ -81,7 +80,7 @@ window#waybar {
 }
 
 tooltip {
-    background-color: @background;
+    background-color: @background-darker;
     border-color: @color6;
 }
 
