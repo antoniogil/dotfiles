@@ -1,8 +1,7 @@
 @import url("./colors.css");
 
-
 * {
-    font-family: 'FiraCode Nerd Font Mono';
+    font-family: "FiraCode Nerd Font Mono";
     font-size: 14px;
 }
 
@@ -27,8 +26,8 @@ window#waybar {
 }
 
 #custom-powermenu {
-  padding-right: 15px;
-  color: @color2;
+    padding-right: 15px;
+    color: @color2;
 }
 
 #custom-menu {
@@ -52,12 +51,12 @@ window#waybar {
 }
 
 #network {
-  color: @color6;
+    color: @color6;
 }
 
 #custom-wallpaper,
 #custom-vpn {
-    color: @color8
+    color: @color8;
 }
 
 #tray {
@@ -107,7 +106,6 @@ tooltip label {
     color: @color11;
     border-bottom: 1px solid;
 }
-
 
 .modules-right {
     padding-left: 15px;

@@ -14,85 +14,73 @@
     "memory",
     "battery",
     "custom/separator",
-    "network"
+    "network",
   ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "pulseaudio",
     "custom/separator",
     "clock",
     "custom/separator",
-    "custom/powermenu"
+    "custom/powermenu",
   ],
   "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+    },
     "persistent-workspaces": {
-      "*": 4
-    }
+      "*": 4,
+    },
   },
   "tray": {
-    "spacing": 15
+    "spacing": 15,
   },
   "cpu": {
     "format": " {usage}%",
-    "tooltip": false
+    "tooltip": false,
   },
   "memory": {
     "format": " {}%",
-    "tooltip": false
+    "tooltip": false,
   },
   "battery": {
     "bat": "BAT0",
     "format": "{icon} {capacity}%",
-    "format-icons": [
-      "󰂃",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
-    "interval": 10
+    "interval": 10,
   },
-  "network":{
+  "network": {
     "interface": "wlan0",
-    "format":"{ifname}",
-    "format-wifi":"{essid} ({signalStrength}%) ",
-    "format-disconnected": "󰖪"
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-disconnected": "󰖪",
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-icons": [
-      "󰕿",
-      "󰖀",
-      "󰕾"
-    ],
-    "format-muted": "󰝟  {volume}%"
+    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "format-muted": "󰝟  {volume}%",
   },
   "clock": {
     "format": "{:%H:%M}",
     "interval": 60,
     "tooltip": true,
-    "tooltip-format": "{:%d. %m. %Y}"
+    "tooltip-format": "{:%d. %m. %Y}",
   },
   "custom/menu": {
     "format": "󰣇",
-    "on-click": "eww open leftmenu",
-    "tooltip": false
+    "on-click": "ags -t ControlPanel",
+    "tooltip": false,
   },
   "custom/powermenu": {
     "format": "⏻",
-    "on-click": " eww open powermenu",
-    "tooltip": false
+    "on-click": " $HOME/.config/rofi/bin/powermenu",
+    "tooltip": false,
   },
   "custom/separator": {
     "format": "|",
-    "tooltip": false
+    "tooltip": false,
   }
 }

@@ -8,8 +8,9 @@
 [
   {
     "bindings": {
-      "Alt+F4": "zed::Quit",
-      "Ctrl+Q": null
+      "alt-f4": "zed::Quit",
+      "ctrl-q": null,
+      "ctrl-shift-tÑ": "workspace::NewTerminal"
     }
   },
   {
@@ -22,6 +23,8 @@
     "context": "Editor",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-l": "editor::DeleteLine",
+      "ctrl-k ctrl-c": "editor::ToggleComments"
     }
   }
 ]
