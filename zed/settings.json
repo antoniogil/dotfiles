@@ -15,5 +15,5 @@
     "light": "One Light",
     "dark": "Dracula"
   },
-  "file_scan_exclusions": ["node_modules", ".git"]
+  "file_scan_exclusions": ["node_modules", ".git", "obj", "bin"]
 }
