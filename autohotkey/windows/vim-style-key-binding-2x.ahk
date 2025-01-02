@@ -1,12 +1,19 @@
-﻿
+﻿SetCapsLockState('AlwaysOff')
+
 ; Main Navigation
-CAPSLOCK & j::MoveCursor("{DOWN}")
-CAPSLOCK & l::MoveCursor("{RIGHT}")
-CAPSLOCK & k::MoveCursor("{UP}")
-CAPSLOCK & h::MoveCursor("{LEFT}")
+CAPSLOCK & j::SendKey("{DOWN}")
+CAPSLOCK & l::SendKey("{RIGHT}")
+CAPSLOCK & k::SendKey("{UP}")
+CAPSLOCK & h::SendKey("{LEFT}")
+CAPSLOCK & i::SendKey("{PGUP}")
+CAPSLOCK & o::SendKey("{PGDN}")
+CAPSLOCK & u::SendKey("{HOME}")
+CAPSLOCK & p::SendKey("{END}")
+CAPSLOCK & n::SendKey("{BACKSPACE}")
+CAPSLOCK & m::SendKey("{DELETE}")
  
 ; Navigation Combos
-MoveCursor(myKey) {
+SendKey(myKey) {
     shift := GetKeyState("SHIFT","P")
     control := GetKeyState("CONTROL","P")
     controlShift := control && shift
