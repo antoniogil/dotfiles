@@ -8,7 +8,8 @@
   "margin": "10 10 0 10", //"10 20 0 20",
   // Choose the order of the modules
   "modules-left": [
-    "custom/menu",
+    "custom/powermenu",
+    //    "custom/menu",
     "custom/separator",
     "cpu",
     "memory",
@@ -16,23 +17,30 @@
     "custom/separator",
     "network",
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "pulseaudio",
     "custom/separator",
     "clock",
     "custom/separator",
-    "custom/powermenu",
+    //    "custom/powermenu",
+    "tray"
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "default": "",
-      "active": "",
-    },
-    "persistent-workspaces": {
-      "*": 4,
-    },
+      "default": "  ",
+      // "special": "",
+      "active": "  ",
+      "focused": "  "
+      // "urgent": " ",
+      // "default": " ",
+    }
+    //    "persistent-workspaces": {
+    //      "*": 4
+    //    }
   },
   "tray": {
     "spacing": 15,
@@ -48,7 +56,18 @@
   "battery": {
     "bat": "BAT0",
     "format": "{icon} {capacity}%",
-    "format-icons": ["󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-icons": [
+      "󰂃",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
     "format-charging": "󰂄 {capacity}%",
     "interval": 10,
   },
@@ -60,7 +79,11 @@
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰕾"
+    ],
     "format-muted": "󰝟  {volume}%",
   },
   "clock": {
@@ -76,7 +99,8 @@
   },
   "custom/powermenu": {
     "format": "⏻",
-    "on-click": " $HOME/.config/rofi/bin/powermenu",
+    //    "on-click": " $HOME/.config/rofi/bin/powermenu",
+    "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
     "tooltip": false,
   },
   "custom/separator": {
