@@ -3,10 +3,11 @@
 * {
     font-family: "FiraCode Nerd Font Mono";
     font-size: 14px;
+    padding: 1px;
 }
 
 window#waybar {
-    background: @background;
+    background: @background-darker;
     color: @purple;
     border-radius: 3px;
 }
