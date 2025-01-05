@@ -1,9 +1,9 @@
 // -*- mode: jsonc -*-
 {
   // "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "position": "top", // Waybar position (top|bottom|left|right)
   // "height": 25, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
+  "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   "margin": "10 10 0 10", //"10 20 0 20",
   // Choose the order of the modules
@@ -15,7 +15,7 @@
     "memory",
     "battery",
     "custom/separator",
-    "network",
+    "network"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -37,21 +37,21 @@
       "focused": "  "
       // "urgent": " ",
       // "default": " ",
+    },
+    "persistent-workspaces": {
+      "*": 4
     }
-    //    "persistent-workspaces": {
-    //      "*": 4
-    //    }
   },
   "tray": {
-    "spacing": 15,
+    "spacing": 15
   },
   "cpu": {
     "format": " {usage}%",
-    "tooltip": false,
+    "tooltip": false
   },
   "memory": {
     "format": " {}%",
-    "tooltip": false,
+    "tooltip": false
   },
   "battery": {
     "bat": "BAT0",
@@ -69,13 +69,13 @@
       "󰁹"
     ],
     "format-charging": "󰂄 {capacity}%",
-    "interval": 10,
+    "interval": 10
   },
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-disconnected": "󰖪",
+    "format-disconnected": "󰖪"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -84,27 +84,27 @@
       "󰖀",
       "󰕾"
     ],
-    "format-muted": "󰝟  {volume}%",
+    "format-muted": "󰝟  {volume}%"
   },
   "clock": {
     "format": "{:%H:%M}",
     "interval": 60,
     "tooltip": true,
-    "tooltip-format": "{:%d. %m. %Y}",
+    "tooltip-format": "{:%d. %m. %Y}"
   },
   "custom/menu": {
     "format": "󰣇",
     "on-click": "ags -t ControlPanel",
-    "tooltip": false,
+    "tooltip": false
   },
   "custom/powermenu": {
     "format": "⏻",
     //    "on-click": " $HOME/.config/rofi/bin/powermenu",
     "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
-    "tooltip": false,
+    "tooltip": false
   },
   "custom/separator": {
     "format": "|",
-    "tooltip": false,
+    "tooltip": false
   }
 }

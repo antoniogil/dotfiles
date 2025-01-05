@@ -10,6 +10,7 @@ window#waybar {
     background: @background-darker;
     color: @purple;
     border-radius: 3px;
+    border:1px solid @color6;
 }
 
 .modules-left,
@@ -17,7 +18,7 @@ window#waybar {
 .modules-right {
     background-color: @background;
     border-radius: 7px;
-    border: 1.5px solid @color6;
+    border: 0px solid @color6;
     padding: 0 4px;
 }
 
