@@ -10,7 +10,8 @@ if true then return {} end
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  { "ellisonleao/gruvbox.nvim", lazy = false, priority = 1000, opts = {} },
+  { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} },
 
   -- Configure LazyVim to load gruvbox
   {
