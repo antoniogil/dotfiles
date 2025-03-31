@@ -4,18 +4,19 @@
     "margin-right": 10,
     "height" : 30,
     "modules-left": [
-      "hyprland/window"
-    ],
-    "modules-center": [
       "hyprland/workspaces",
     ],
+    "modules-center": [
+      "hyprland/window",
+    ],
     "modules-right": [
+    "clock",
     "pulseaudio",
     "temperature",
     "network",
     "memory",
     "battery",
-    "clock",
+    "tray",
     ],
     "hyprland/window": {
       "format": "{}",
@@ -38,7 +39,8 @@
     },
     "clock": {
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%Y-%m-%d}"
+      "format-alt": "{:%Y-%m-%d}",
+      "locale":"es_ES.UTF-8"
     },
     "cpu": {
       "format": "{usage}%",
@@ -49,8 +51,8 @@
     },
     "temperature": {
       "critical-threshold": 80,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", "", ""]
+      "format": "{icon} {temperatureC} 󰔄",
+      "format-icons": ["", "", ""]
     },
     "battery": {
       "states": {
