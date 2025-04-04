@@ -4,7 +4,8 @@
     "margin-right": 10,
     "height" : 30,
     "modules-left": [
-      "hyprland/window"
+      "hyprland/window",
+      "keyboard-state"
     ],
     "modules-center": [
       "hyprland/workspaces",
@@ -25,6 +26,15 @@
       },
       "separate-outputs": true,
     },
+    "keyboard-state": {
+      "capslock": true,
+      "format": " {icon} ",
+      "format-icons": {
+          "locked": " CAPS ",
+          "unlocked": " "
+        }
+
+      },
     "hyprland/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
@@ -45,12 +55,14 @@
       "tooltip": false
     },
     "memory": {
-      "format": "  {used:.1f} GB"
+      "format": "  {used:.1f} GB",
+      "tooltip-format": "{total:0.1f}G"
     },
     "temperature": {
       "critical-threshold": 80,
       "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", "", ""]
+      "format-icons": ["", "", ""],
+      "tooltip": false
     },
     "battery": {
       "states": {
@@ -59,18 +71,19 @@
       },
       "format": "{icon}   {capacity}%",
       "format-full": "{icon}  {capacity}%",
-      "format-charging": "  {capacity}%",
+      "format-charging": "  {capacity}%",
       "format-plugged": "  {capacity}%",
       "format-alt": "{time} {icon}",
       "format-icons": ["", "", "", "", ""]
     },
     "network": {
-      "format-wifi": "   {signalStrength}%",
+      "format-wifi": "  {signalStrength}%",
       "format-ethernet": "{cidr} ",
       "tooltip-format": "{ifname} via {gwaddr} ",
       "format-linked": "{ifname} (No IP) ",
       "format-disconnected": " ⚠ ",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      "format-alt": "{ifname}: {ipaddr}/{cidr}",
+      "tooltip-format-wifi": "{essid}"
     },
     "pulseaudio": {
       "format": "{icon}   {volume}%",
