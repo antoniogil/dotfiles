@@ -62,15 +62,10 @@
     },
     "temperature": {
       "critical-threshold": 80,
-<<<<<<< HEAD
       "format": "{icon} {temperatureC}°C",
       "format-icons": ["", "", ""],
       "tooltip": false
-=======
-      "format": "{icon} {temperatureC} 󰔄",
-      "format-icons": ["", "", ""]
->>>>>>> 59d8f1dc46f32d47d857372e1352ef1d83a3faa5
-    },
+   },
     "battery": {
       "states": {
         "warning": 30,
