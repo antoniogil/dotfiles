@@ -1,5 +1,5 @@
 configuration {
-	font 				: "EnvyCodeR Nerd Font Propo 14";
+	font 				: "DepartureMono Nerd Font Propo 14";
 	show-icons 			: false;
 	sidebar-mode 			: true;
 	scroll-method 			: 1;
@@ -23,10 +23,11 @@ window {
 	border-radius 			: 0px;
 	padding 			: 0;
 	width 				: 100%;
-	background-color 		: @back;
+	background-color 		: @trans;
 	foreground-color 		: @fore;
-	fullscreen 			: false;
+	fullscreen 			: true;
 	anchor				: north;
+  transparency: "real";
 	location			: north;
 }
 
