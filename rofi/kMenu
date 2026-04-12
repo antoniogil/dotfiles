@@ -1,5 +1,5 @@
 configuration {
-	font 				: "DepartureMono Nerd Font Propo 14";
+	font 				: "FiraCode Nerd Font Propo 14";
 	show-icons 			: false;
 	sidebar-mode 			: true;
 	scroll-method 			: 1;
@@ -25,17 +25,17 @@ window {
 	width 				: 100%;
 	background-color 		: @trans;
 	foreground-color 		: @fore;
-	fullscreen 			: true;
-	anchor				: north;
+	fullscreen 			: false;
+	anchor				: center;
   transparency: "real";
-	location			: north;
+	location			: center;
 }
 
 mainbox {
 	enabled 			: true;
 	margin 				: 10px 10px;
 	padding 			: 10px;
-	background-color 		: @trans;
+	background-color 		: @back;
 }
 
 prompt {

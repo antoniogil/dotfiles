@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if pgrep -x "waybar" >/dev/null; then
-    killall waybar
+  killall waybar
 fi
 
-waybar &
+waybar -c ~/.config/waybar/config_horizontal -s ~/.config/waybar/stylehor.css &
