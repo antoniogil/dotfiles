@@ -3,4 +3,4 @@
 theme="kMenu"
 dir="$HOME/.config/rofi"
 
-rofi -no-lazy-grab -show drun -modi drun -no-fixed-num-lines -lines 5 -theme $dir/"$theme"
+rofi -no-lazy-grab -show drun -modi drun -no-fixed-num-lines -i -lines 5 -theme $dir/"$theme"

@@ -22,13 +22,14 @@ window {
 	border-color 			: @back;
 	border-radius 			: 0px;
 	padding 			: 0;
-	width 				: 100%;
+  margin        : 25;
+	width 				: 75%;
 	background-color 		: @trans;
 	foreground-color 		: @fore;
 	fullscreen 			: false;
-	anchor				: center;
+	anchor				: north;
   transparency: "real";
-	location			: center;
+	location			: north;
 }
 
 mainbox {
