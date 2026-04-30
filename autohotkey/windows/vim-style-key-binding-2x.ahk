@@ -14,6 +14,7 @@ global fkeysEnabled := false
 {
     global capsHeld
     global capsUsed
+    global monitorTimer
 
     capsUsed := false
 
@@ -24,10 +25,20 @@ global fkeysEnabled := false
         capsHeld := true
 		ShowOverlay()
 
+        ; Monitor loop para mantener el overlay visible
+        monitorTimer := SetTimer(MonitorOverlay, 100)
+
         ; Espera a que se suelte
         KeyWait("CapsLock")
 
         capsHeld := false
+        
+        ; Detiene el monitor de forma segura
+        if (monitorTimer)
+        {
+            monitorTimer.Stop()
+        }
+        
 		HideOverlay()
     }
     else
@@ -40,6 +51,24 @@ global fkeysEnabled := false
     }
 }
 
+MonitorOverlay()
+{
+    global capsHeld, overlayGui
+    
+    ; Si capsHeld es false, no hacer nada
+    if (!capsHeld)
+        return
+    
+    ; Fuerza la visibilidad del overlay
+    if (!WinExist(overlayGui.Hwnd " ahk_id"))
+    {
+        ShowOverlay()
+    }
+    
+    ; Asegura que siempre esté en el frente
+    WinSetAlwaysOnTop(1, overlayGui.Hwnd)
+}
+
 ;==========================
 ; Overlay
 ;==========================
@@ -47,6 +76,8 @@ InitOverlay()
 {
     global overlayGui
     global overlayText
+    global hideTimer
+    global monitorTimer
 
     overlayGui := Gui("+AlwaysOnTop -Caption +ToolWindow +E0x20")
     overlayGui.BackColor := "000000"
@@ -58,11 +89,13 @@ InitOverlay()
     overlayText := overlayGui.AddText("Center", "NORMAL / NAV MODE")
 
     WinSetTransparent(180, overlayGui.Hwnd)
+    hideTimer := 0
+    monitorTimer := 0
 }
 
 ShowOverlay(text := "NORMAL / NAV MODE")
 {
-    global overlayGui, overlayText
+    global overlayGui, overlayText, hideTimer
 
     overlayText.Value := text
 
@@ -71,12 +104,21 @@ ShowOverlay(text := "NORMAL / NAV MODE")
     screenCenterY := 40
 
     overlayGui.Show("x" screenCenterX " y" screenCenterY " NoActivate")
+    WinSetAlwaysOnTop(1, overlayGui.Hwnd)
+    
+    ; Cancela cualquier timer pendiente de ocultamiento
+    if (hideTimer)
+    {
+        SetTimer(hideTimer, 0)
+        hideTimer := 0
+    }
 }
 
 HideOverlay()
 {
-    global overlayGui
+    global overlayGui, hideTimer
     overlayGui.Hide()
+    hideTimer := 0
 }
 
 ; =========================
@@ -85,7 +127,7 @@ HideOverlay()
 
 #+F::
 {
-    global fkeysEnabled
+    global fkeysEnabled, hideTimer
     fkeysEnabled := !fkeysEnabled
     
     if (fkeysEnabled)
@@ -97,7 +139,15 @@ HideOverlay()
         ShowOverlay("FULL KEYBOARD MODE")
     }
     
-    SetTimer(() => HideOverlay(), 2000)
+    ; Cancela timer anterior si existe
+    if (hideTimer)
+    {
+        SetTimer(hideTimer, 0)
+    }
+    
+    ; Crea nuevo timer para ocultar después de 2 segundos
+    hideTimer := () => HideOverlay()
+    SetTimer(hideTimer, 2000)
 }
 
 ; =========================
