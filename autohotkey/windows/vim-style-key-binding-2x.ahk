@@ -18,21 +18,17 @@ global fkeysEnabled := false
     capsUsed := false
 
     ; Espera a ver si se mantiene pulsado
-    if !KeyWait("CapsLock", "T0.2")  ; 200 ms
+    if !KeyWait("CapsLock", "T0.1")  ; 100 ms
     {
         ; HOLD
         capsHeld := true
-	; TurnCapsLED(true)
-        ; ShowIndicator("Modo NORMAL / NAV")
-	ShowOverlay()
+		ShowOverlay()
 
         ; Espera a que se suelte
         KeyWait("CapsLock")
 
         capsHeld := false
-	; TurnCapsLED(false)
-        ; HideIndicator()
-	HideOverlay()
+		HideOverlay()
     }
     else
     {
@@ -42,31 +38,6 @@ global fkeysEnabled := false
             Send("{Esc}")
         }
     }
-}
-
-; =========================
-; INDICADOR
-; =========================
-
-ShowIndicator(text)
-{
-    ToolTip(text, 10, 10)
-}
-
-HideIndicator()
-{
-    ToolTip()
-}
-
-;==========================
-; TurnCapsLED
-;==========================
-TurnCapsLED(on := true)
-{
-	if (on)
-		SetCapsLockState "AlwaysOn"
-	else
-		SetCapsLockState "AlwaysOff"
 }
 
 ;==========================
@@ -135,7 +106,6 @@ HideOverlay()
 
 #HotIf (!capsHeld && fkeysEnabled)
 
-;º::Send("{F1}")
 1::Send("{Blind}{F1}")
 2::Send("{Blind}{F2}")
 3::Send("{Blind}{F3}")
@@ -184,10 +154,10 @@ HideOverlay()
 ^¡::Send("{Blind}{F12}")
 
 ; =========================
-; F-KEYS CON SHIFT
+; F-KEYS CON SHIFT (Spanish keyboard)
 ; =========================
 
-+1::Send("{Blind}!")
++1::Send("{Blind}{!}")
 +2::Send('{Blind}"')
 +3::Send("{Blind}·")
 +4::Send("{Blind}$")
@@ -216,7 +186,7 @@ HideOverlay()
 +1::Send("!")
 
 2::Send("2")
-+2::Send('\"')
++2::Send('"')
 
 3::Send("3")
 +3::Send("·")
@@ -282,11 +252,74 @@ l::
     Send("{Blind}{Right}")
 }
 
++h::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Left}")
+}
+
++j::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Down}")
+}
+
++k::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Up}")
+}
+
++l::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Right}")
+}
+
++u::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{PgUp}")
+}
+
++o::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{End}")
+}
+
++i::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Home}")
+}
+
++p::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{PgDn}")
+}
+
++Backspace::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}+{Delete}")
+}
+
 u::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{Home}")
+    Send("{Blind}{PgUp}")
 }
 
 o::
@@ -300,7 +333,7 @@ i::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{PgUp}")
+    Send("{Blind}{Home}")
 }
 
 p::
@@ -349,11 +382,74 @@ Backspace::
     Send("{Blind}{Right}")
 }
 
+!+h::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Left}")
+}
+
+!+j::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Down}")
+}
+
+!+k::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Up}")
+}
+
+!+l::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Right}")
+}
+
+!+u::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{PgUp}")
+}
+
+!+o::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{End}")
+}
+
+!+i::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Home}")
+}
+
+!+p::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{PgDn}")
+}
+
+!+Backspace::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}!+{Delete}")
+}
+
 !u::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{Home}")
+    Send("{Blind}{PgUp}")
 }
 
 !o::
@@ -367,7 +463,7 @@ Backspace::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{PgUp}")
+    Send("{Blind}{Home}")
 }
 
 !p::
@@ -416,11 +512,74 @@ Backspace::
     Send("{Blind}{Right}")
 }
 
+^+h::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Left}")
+}
+
+^+j::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Down}")
+}
+
+^+k::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Up}")
+}
+
+^+l::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Right}")
+}
+
+^+u::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{PgUp}")
+}
+
+^+o::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{End}")
+}
+
+^+i::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Home}")
+}
+
+^+p::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{PgDn}")
+}
+
+^+Backspace::
+{
+    global capsUsed
+    capsUsed := true
+    Send("{Blind}^+{Delete}")
+}
+
 ^u::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{Home}")
+    Send("{Blind}{PgUp}")
 }
 
 ^o::
@@ -434,7 +593,7 @@ Backspace::
 {
     global capsUsed
     capsUsed := true
-    Send("{Blind}{PgUp}")
+    Send("{Blind}{Home}")
 }
 
 ^p::
